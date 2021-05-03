@@ -54,6 +54,7 @@ class PlansFragment : Fragment() {
             when (position) {
                 0 -> { tab.text = "TRAINING"}
                 1 -> { tab.text = "TROUBLEZONE"}
+                2 ->{ tab.text = "GRAPH"}
             }
         }.attach()
 

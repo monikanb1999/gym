@@ -43,7 +43,7 @@ class EditableHomeActivity : AppCompatActivity(),HomeDetails {
             if (it != null) {
                 binding.setVariable(BR.etviewmodel, editableViewModel)//used for all entity
                 gender=it.Gender
-                Toast.makeText(this, it.Height, Toast.LENGTH_LONG).show()
+//                Toast.makeText(this, it.Height, Toast.LENGTH_LONG).show()
             }
         })
     }
