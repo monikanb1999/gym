@@ -10,6 +10,10 @@ interface Handler {
    fun onOpenCamClicked(view: View)
 
 }
+interface DetectHandler
+{
+    fun onDetectClicked(view: View)
+}
 interface signuphandler
 {
     fun onsignupclicked(view: View)

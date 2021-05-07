@@ -8,15 +8,18 @@ import java.util.ArrayList
 
 class MyViewPagerAdapter(fragmentManager: Fragment) : FragmentStateAdapter(fragmentManager) {
     override fun getItemCount(): Int {
-        return 2
+        return 3
     }
 
     override fun createFragment(position: Int): Fragment {
         return if(position == 0){
             TrainingFragment()
         }
-        else{
+        else if(position == 1){
             TroubleZoneFragment()
+        }
+        else{
+            DetectingFragment()
         }
 
     }
