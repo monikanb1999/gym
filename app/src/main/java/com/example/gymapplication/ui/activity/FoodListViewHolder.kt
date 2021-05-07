@@ -1,4 +1,4 @@
-package com.example.gymapplication.ui.Activity
+package com.example.gymapplication.ui.activity
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gymapplication.databinding.*

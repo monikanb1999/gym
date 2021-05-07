@@ -1,32 +1,26 @@
-package com.example.gymapplication.ui.Activity
+package com.example.gymapplication.ui.activity
 
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.text.TextUtils
 import android.util.Log
-import android.view.ContextMenu
 import android.view.View
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import com.example.gymapplication.BR
 import com.example.gymapplication.HomeDetails
 import com.example.gymapplication.R
 import com.example.gymapplication.databinding.ActivityEditableHomeBinding
 import com.example.gymapplication.db.CustomerDetails
 import com.example.gymapplication.ui.home.EditableViewModel
-import com.example.gymapplication.ui.home.HomeViewModel
-import com.example.gymapplication.ui.plans.PlansViewModel
 
 
 class EditableHomeActivity : AppCompatActivity(),HomeDetails {
-    lateinit var binding: ActivityEditableHomeBinding
+    lateinit var binding:ActivityEditableHomeBinding
     lateinit var gender :String
 
      val editableViewModel: EditableViewModel by lazy {
@@ -39,7 +33,7 @@ class EditableHomeActivity : AppCompatActivity(),HomeDetails {
         setContentView(binding.root)
         binding.edithandler = this
 
-        editableViewModel.editablegymdetaillist.observe(this , Observer {
+        editableViewModel.gymdetaillist.observe(this , Observer {
             if (it != null) {
                 binding.setVariable(BR.etviewmodel, editableViewModel)//used for all entity
                 gender=it.Gender

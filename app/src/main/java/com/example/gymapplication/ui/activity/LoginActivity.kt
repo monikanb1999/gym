@@ -1,19 +1,15 @@
-package com.example.gymapplication.ui.Activity
+package com.example.gymapplication.ui.activity
 
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.gymapplication.R
 import com.example.gymapplication.databinding.ActivityLoginBinding
-import com.example.gymapplication.db.CustomerDetails
 import com.example.gymapplication.LogHandler
-import com.example.gymapplication.ui.home.HomeFragment
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(),LogHandler {

@@ -1,10 +1,9 @@
-package com.example.gymapplication.ui.Activity
+package com.example.gymapplication.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.gymapplication.databinding.ActivityLoginBinding
 import com.example.gymapplication.databinding.ActivitySignUpBinding
 import com.example.gymapplication.signuphandler
 

@@ -1,4 +1,4 @@
-package com.example.gymapplication.ui.Activity
+package com.example.gymapplication.ui.activity
 
 
 import android.content.Context
@@ -7,9 +7,6 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.constraintlayout.motion.widget.MotionLayout
-import com.example.gymapplication.ui.Activity.HomeActivity
-import com.example.gymapplication.R
-import com.example.gymapplication.databinding.ActivityEditableHomeBinding
 import com.example.gymapplication.databinding.ActivitySplashBinding
 import kotlinx.android.synthetic.main.activity_splash.*
 

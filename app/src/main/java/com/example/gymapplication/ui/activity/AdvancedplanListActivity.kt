@@ -1,4 +1,4 @@
-package com.example.gymapplication.ui.Activity
+package com.example.gymapplication.ui.activity
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity

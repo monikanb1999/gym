@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gymapplication.R
 import com.example.gymapplication.databinding.ActivityIntermediatePlanBinding
 import com.example.gymapplication.databinding.IntermediateplanrecordBinding
-import com.example.gymapplication.ui.Activity.IntermediateplanListActivity
+import com.example.gymapplication.ui.activity.IntermediateplanListActivity
 
 class IntermediatePlanActivity : AppCompatActivity() {
     lateinit var binding: ActivityIntermediatePlanBinding

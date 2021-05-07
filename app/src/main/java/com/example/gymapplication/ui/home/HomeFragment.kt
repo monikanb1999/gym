@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.gymapplication.BR
 import com.example.gymapplication.Handler
 import com.example.gymapplication.databinding.FragmentHomeBinding
-import com.example.gymapplication.ui.Activity.EditableHomeActivity
+import com.example.gymapplication.ui.activity.EditableHomeActivity
 
 
 class HomeFragment : Fragment(),Handler {

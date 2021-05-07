@@ -5,15 +5,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gymapplication.R
 import com.example.gymapplication.databinding.*
-import com.example.gymapplication.ui.Activity.FoodListActivity
-import com.example.gymapplication.ui.Activity.PlanlistActivity
+import com.example.gymapplication.ui.activity.PlanlistActivity
 
 class BeginnerPlanActivity : AppCompatActivity() {
     lateinit var binding: ActivityBeginnerPlanBinding

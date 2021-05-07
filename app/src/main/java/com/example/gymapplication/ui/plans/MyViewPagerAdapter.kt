@@ -15,13 +15,10 @@ class MyViewPagerAdapter(fragmentManager: Fragment) : FragmentStateAdapter(fragm
         return if(position == 0){
             TrainingFragment()
         }
-        else if(position == 1){
+        else{
             TroubleZoneFragment()
         }
-        else
-        {
-            GraphFragment()
-        }
+
     }
     }
 //

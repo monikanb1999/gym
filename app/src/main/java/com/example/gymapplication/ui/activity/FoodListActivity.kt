@@ -1,4 +1,4 @@
-package com.example.gymapplication.ui.Activity
+package com.example.gymapplication.ui.activity
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gymapplication.R
 import com.example.gymapplication.databinding.*
-import com.example.gymapplication.db.CustomerDetails
 import com.example.gymapplication.ui.foods.FoodsViewModel
 
 class FoodListActivity : AppCompatActivity() {

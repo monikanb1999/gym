@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gymapplication">
 
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,35 +9,41 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GymApplication">
-        <activity android:name=".ui.plans.GraphActivity"></activity>
-        <activity android:name=".ui.Activity.SignUpActivity" />
-        <activity android:name=".ui.Activity.AdvancedplanListActivity" />
-        <activity android:name=".ui.Activity.IntermediateplanListActivity" />
-        <activity android:name=".ui.plans.AdvancedPlanActivity" />
-        <activity android:name=".ui.plans.IntermediatePlanActivity" />
-        <activity android:name=".ui.Activity.RegisterActivity" />
-        <activity android:name=".ui.plans.TroubleZoneFragment" />
-        <activity android:name=".ui.Activity.PlanlistActivity" />
-        <activity android:name=".ui.plans.BeginnerPlanActivity" />
-        <activity android:name=".ui.Activity.FoodListActivity" />
-        <activity android:name=".ui.Activity.MainActivity" />
-        <activity android:name=".ui.Activity.EditableHomeActivity" />
-        <activity android:name=".ui.Activity.FoodListActivity" />
-        <activity android:name=".ui.Activity.FoodDetailsActivity" />
-        <activity
-            android:name=".ui.Activity.SplashActivity"
-            android:theme="@style/Theme.GymApplication.SplashTheme">
+        <activity android:name=".ui.pedometer.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.Activity.LoginActivity" />
+        <activity android:name=".ui.plans.GraphActivity" />
+        <activity android:name=".ui.activity.SignUpActivity" />
+        <activity android:name=".ui.activity.AdvancedplanListActivity" />
+        <activity android:name=".ui.activity.IntermediateplanListActivity" />
+        <activity android:name=".ui.plans.AdvancedPlanActivity" />
+        <activity android:name=".ui.plans.IntermediatePlanActivity" />
+        <activity android:name=".ui.activity.RegisterActivity" />
+        <activity android:name=".ui.plans.TroubleZoneFragment" />
+        <activity android:name=".ui.activity.PlanlistActivity" />
+        <activity android:name=".ui.plans.BeginnerPlanActivity" />
+        <activity android:name=".ui.activity.FoodListActivity" />
+        <activity android:name=".ui.stepcounterdemo.MainActivity" />
+        <activity android:name=".ui.activity.EditableHomeActivity" />
+        <activity android:name=".ui.activity.FoodListActivity" />
+        <activity android:name=".ui.activity.FoodDetailsActivity" />
         <activity
-            android:name=".ui.Activity.HomeActivity"
+            android:name=".ui.activity.SplashActivity"
+            android:theme="@style/Theme.GymApplication.SplashTheme">
+
+        </activity>
+        <activity android:name=".ui.activity.LoginActivity" />
+        <activity
+            android:name=".ui.activity.HomeActivity"
             android:label="@string/title_activity_home" />
-        <activity android:name=".ui.Activity.MainActivity" />
     </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION+" />
 
 </manifest>

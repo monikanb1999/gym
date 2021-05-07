@@ -1,4 +1,4 @@
-package com.example.gymapplication.ui.Activity
+package com.example.gymapplication.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,10 +10,8 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.gymapplication.R
 import com.example.gymapplication.RegisterHandler
-import com.example.gymapplication.databinding.ActivityEditableHomeBinding
 import com.example.gymapplication.databinding.ActivityRegisterBinding
 import com.example.gymapplication.db.CustomerDetails
-import com.example.gymapplication.ui.home.HomeFragment
 import com.example.gymapplication.ui.home.HomeViewModel
 
 class RegisterActivity : AppCompatActivity(),RegisterHandler {

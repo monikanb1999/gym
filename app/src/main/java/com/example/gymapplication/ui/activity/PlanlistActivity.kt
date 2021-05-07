@@ -1,4 +1,4 @@
-package com.example.gymapplication.ui.Activity
+package com.example.gymapplication.ui.activity
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -13,30 +13,35 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gymapplication.R
 import com.example.gymapplication.databinding.*
 import com.example.gymapplication.ui.plans.PlansViewModel
+import kotlinx.android.synthetic.main.jumpingjacks.view.*
+import kotlinx.android.synthetic.main.rowitem.view.*
 
-class IntermediateplanListActivity : AppCompatActivity() {
-    lateinit var binding: ActivityIntermediatePlanBinding
-    var interdaynumber:Int=0
+class PlanlistActivity : AppCompatActivity() {
+    lateinit var binding: ActivityPlanlistBinding
+    var daynumber:Int=0
+
+
+
     val viewmodel: PlansViewModel by lazy {
         ViewModelProvider(this).get(PlansViewModel::class.java)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityIntermediatePlanBinding.inflate(layoutInflater)
+        binding = ActivityPlanlistBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        interdaynumber= intent!!.extras?.get("position") as Int
-        Log.d("interdaynumber", "onCreate: $interdaynumber")
-        val adapter = InterPlanListAdapter(this)
-        binding.interrecyclerview.setHasFixedSize(true)
+        daynumber= intent!!.extras?.get("position") as Int
+        Log.d("daynumber", "onCreate: $daynumber")
+        val adapter = PlanListAdapter(this)
+        binding.plansrecyclerView.setHasFixedSize(true)
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
-        binding.interrecyclerview.layoutManager = layoutManager
-        binding.interrecyclerview?.adapter =adapter
+        binding.plansrecyclerView.layoutManager = layoutManager
+        binding.plansrecyclerView?.adapter =adapter
 
         viewmodel.gymplandetaillist.observe(this, {
 
         })
     }
-    private inner class InterPlanListAdapter internal constructor(
+    private inner class PlanListAdapter internal constructor(
         context: Context
     ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         private val JumpingJacks = 0
@@ -60,216 +65,160 @@ class IntermediateplanListActivity : AppCompatActivity() {
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
             if (getItemViewType(position) == JumpingJacks) {
                 (holder as ShowBeginPlanViewHolder)
-                when (interdaynumber) {
-                    1 -> {
+                when(daynumber){
+                    1->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj1a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj1b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj1a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj1b)
 
                     }
-                    2 -> {
+                    2->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj2a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj2b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj2a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj2b)
                     }
-                    3 -> {
+                    3->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj1a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj1b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj1a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj1b)
                     }
-                    4 -> {
+                    4->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj4a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj4b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj4a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj4b)
                     }
-                    5 -> {
+                    5->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj2a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj2b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj2a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj2b)
                     }
-                    6 -> {
+                    6->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj5a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj5b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj5a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj5b)
                     }
-                    7 -> {
+                    7->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj1a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj1b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj1a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj1b)
                     }
-                    8 -> {
+                    8->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj5a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj5b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj5a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj5b)
                     }
-                    9 -> {
+                    9->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj4a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj4b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj4a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj4b)
                     }
-                    10 -> {
+                    10->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj2a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj2b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj2a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj2b)
                     }
-                    11 -> {
+                    11->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj1a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj1b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj1a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj1b)
                     }//
-                    12 -> {
+                    12->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj3a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj3a)
                     }
-                    13 -> {
+                    13->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj4a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj4b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj4a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj4b)
                     }
-                    14 -> {
+                    14->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj4a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj4b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj4a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj4b)
                     }
-                    15 -> {
+                    15->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj1a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj1b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj1a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj1b)
                     }
-                    16 -> {
+                    16->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj2a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj2b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj2a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj2b)
                     }
-                    17 -> {
+                    17->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj4a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj4b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj4a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj4b)
                     }
-                    18 -> {
+                    18->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj1a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj1b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj1a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj1b)
                     }
-                    19 -> {
+                    19->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj4a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj4b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj4a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj4b)
                     }
-                    20 -> {
+                    20->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj1a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj1b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj1a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj1b)
                     }
-                    21 -> {
+                    21->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj3a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj3a)
                     }
-                    22 -> {
+                    22->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj1a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj1b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj1a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj1b)
                     }
-                    23 -> {
+                    23->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj3a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj3a)
                     }
-                    24 -> {
+                    24->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj4a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj4b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj4a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj4b)
                     }
-                    25 -> {
+                    25->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj1a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj1b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj1a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj1b)
                     }
-                    26 -> {
+                    26->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj4a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj4b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj4a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj4b)
                     }
-                    27 -> {
+                    27->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj3a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj3a)
                     }
-                    28 -> {
+                    28->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj1a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj1b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj1a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj1b)
                     }
-                    29 -> {
+                    29->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj2a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj2b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj2a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj2b)
                     }
-                    30 -> {
+                    30->{
                         holder.jumpingjacksBinding.JumpingJackstextView.text.toString()
-                        holder.jumpingjacksBinding.JumpingJacksTextView.text =
-                            resources.getString(R.string.jj1a)
-                        holder.jumpingjacksBinding.JumpingJacksTextView2.text =
-                            resources.getString(R.string.jj1b)
+                        holder.jumpingjacksBinding.JumpingJacksTextView.text= resources.getString(R.string.jj1a)
+                        holder.jumpingjacksBinding.JumpingJacksTextView2.text= resources.getString(R.string.jj1b)
                     }
                 }
                 holder.jumpingjacksBinding.executePendingBindings()
             }
             if (getItemViewType(position) == Squats) {
                 (holder as ShowBeginPlanSQViewHolder)
-                when(interdaynumber){
+                when(daynumber){
                     1-> {
                         holder.squatsBinding.squatstextView.text.toString()
                         holder.squatsBinding.squatsCountTextView.text= resources.getString(R.string.sq1a)
@@ -427,7 +376,7 @@ class IntermediateplanListActivity : AppCompatActivity() {
             }
             if (getItemViewType(position) == PushUps) {
                 (holder as ShowBeginPushUpsViewHolder)
-                when(interdaynumber) {
+                when(daynumber) {
                     1 -> {
                         holder.pushupsBinding.pushupstextView.text.toString()
                         holder.pushupsBinding.pushupsCountTextView.text= resources.getString(R.string.pu1a)
@@ -584,7 +533,7 @@ class IntermediateplanListActivity : AppCompatActivity() {
             }
             if (getItemViewType(position) == LegRaises) {
                 (holder as ShowBeginLRViewHolder)
-                when(interdaynumber) {
+                when(daynumber) {
                     1 -> {
                         holder.legraisesBinding.lrtextView.text.toString()
                         holder.legraisesBinding.lrCountTextView.text= resources.getString(R.string.lr1a)
@@ -724,6 +673,7 @@ class IntermediateplanListActivity : AppCompatActivity() {
                         holder.legraisesBinding.lrCountTextView2.text= resources.getString(R.string.lr6b)
                     }
 
+
                 }
                 holder.legraisesBinding.executePendingBindings()
             }
@@ -740,15 +690,15 @@ class IntermediateplanListActivity : AppCompatActivity() {
                     return ShowBeginPlanViewHolder(jumpingjacksBinding)
                 }
                 Squats -> {
-                    val squatsBinding: SquatsBinding = DataBindingUtil.inflate(inflater, R.layout.squats, parent, false)
+                    val squatsBinding:SquatsBinding = DataBindingUtil.inflate(inflater, R.layout.squats, parent, false)
                     return ShowBeginPlanSQViewHolder(squatsBinding)
                 }
                 PushUps -> {
-                    val pushupsBinding: PushupsBinding = DataBindingUtil.inflate(inflater, R.layout.pushups, parent, false)
+                    val pushupsBinding:PushupsBinding = DataBindingUtil.inflate(inflater, R.layout.pushups, parent, false)
                     return ShowBeginPushUpsViewHolder(pushupsBinding)
                 }
                 else -> {
-                    val legraisesBinding: LegraisesBinding = DataBindingUtil.inflate(inflater, R.layout.legraises, parent, false)
+                    val legraisesBinding:LegraisesBinding= DataBindingUtil.inflate(inflater, R.layout.legraises, parent, false)
                     return ShowBeginLRViewHolder(legraisesBinding)
                 }
             }

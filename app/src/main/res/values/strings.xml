@@ -303,6 +303,8 @@ If you’re looking to take your leg raises airborne but aren’t quite ready to
     <string name="lr6a">Hanging knee raise.
 If you’re building up to the hanging leg raise, or halfway through a set of them and realise you haven’t got the strength to get through to the end, give the hanging knee raise a go. Hang from a bar with an overhand grip. Draw your knees up slowly until your thighs are parallel to the ground, then lower them slowly. </string>
     <string name="lr6b">It’s still a great move for hammering your abs, just not quite as tough as the full hanging leg raise.</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 
 
 </resources>

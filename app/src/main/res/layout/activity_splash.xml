@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/motionlayout"
     android:background="@drawable/gradient"
-    tools:context=".ui.Activity.SplashActivity"
+    tools:context=".ui.activity.SplashActivity"
     app:layoutDescription="@xml/activity_splash_scene">
     <ImageView
         android:layout_width="wrap_content"

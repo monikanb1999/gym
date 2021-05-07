@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gymapplication.R
 import com.example.gymapplication.databinding.ActivityAdvancedPlanBinding
 import com.example.gymapplication.databinding.AdvanceplanrecordBinding
-import com.example.gymapplication.ui.Activity.PlanlistActivity
+import com.example.gymapplication.ui.activity.PlanlistActivity
 
 class AdvancedPlanActivity : AppCompatActivity() {
     lateinit var binding: ActivityAdvancedPlanBinding

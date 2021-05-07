@@ -5,6 +5,6 @@
     android:layout_width="match_parent"
     android:background="@drawable/gradient"
     android:layout_height="match_parent"
-    tools:context=".ui.Activity.IntermediateplanListActivity">
+    tools:context=".ui.activity.IntermediateplanListActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

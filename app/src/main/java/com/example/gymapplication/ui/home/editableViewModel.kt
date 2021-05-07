@@ -13,11 +13,11 @@ import kotlinx.coroutines.launch
 class EditableViewModel(application: Application): AndroidViewModel(application) {
     private val tableRespository: Repository
     //observer for recyclerview
-    var editablegymdetaillist: LiveData<CustomerDetails>
+    var gymdetaillist: LiveData<CustomerDetails>
     init {
         val dao= GymDatabase.getInstance(getApplication()).GymDao()
         tableRespository= Repository(dao)
-        editablegymdetaillist=tableRespository.getcustrepositorytable()
+        gymdetaillist=tableRespository.getcustrepositorytable()
     }
 
     fun updatetable(customerDetails: CustomerDetails)= viewModelScope.launch(Dispatchers.IO) {

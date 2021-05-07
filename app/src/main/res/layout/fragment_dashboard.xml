@@ -32,6 +32,8 @@
             android:id="@+id/troublezone"
             />
 
+
+
         </com.google.android.material.tabs.TabLayout>
 
         <androidx.viewpager2.widget.ViewPager2
